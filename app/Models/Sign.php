@@ -21,4 +21,12 @@ class Sign extends Model
     {
         return $this->hasMany(SignWord::class);
     }
+
+     /**
+     * このイラストに紐づく選択肢一覧
+     */
+    public function quizOptions()
+    {
+        return $this->hasMany(QuizOption::class);
+    }
 }

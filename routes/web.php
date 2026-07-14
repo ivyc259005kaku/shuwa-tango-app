@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\SignController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,8 +33,10 @@ Route::middleware('auth')->group(function () {
         return view('home.index');
     })->name('home');
 
-    // 管理者：単語管理画面（仮実装）
-    Route::get('/admin/words', function () {
-        return view('admin.words');
-    })->name('admin.words');
+   // 管理者：単語管理画面
+
+    Route::get('/admin/words', [SignController::class, 'index'])->name('admin.words');
+    Route::post('/admin/words', [SignController::class, 'store'])->name('admin.words.store');
+    Route::put('/admin/words/{sign}', [SignController::class, 'update'])->name('admin.words.update');
+    Route::delete('/admin/words/{sign}', [SignController::class, 'destroy'])->name('admin.words.destroy');
 });
