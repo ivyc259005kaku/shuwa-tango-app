@@ -29,4 +29,21 @@ class Sign extends Model
     {
         return $this->hasMany(QuizOption::class);
     }
+
+     /**
+    * このイラストに対する回答結果一覧
+     */
+    public function quizResults()
+    {
+        return $this->hasMany(QuizResult::class);
+    }
+
+   /**
+     * このイラストに対する学習進捗一覧
+     */
+    public function userProgress()
+    {
+        return $this->hasMany(UserProgress::class);
+    }
+ 
 }
