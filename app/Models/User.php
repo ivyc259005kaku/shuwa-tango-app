@@ -46,4 +46,20 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    /**
+     * このユーザーの回答結果一覧
+     */
+    public function quizResults()
+    {
+        return $this->hasMany(QuizResult::class);
+    }
+
+    /**
+     * このユーザーの学習進捗一覧
+     */
+    public function progress()
+    {
+        return $this->hasMany(UserProgress::class);
+    }
 }

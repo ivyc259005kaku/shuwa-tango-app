@@ -37,7 +37,7 @@ class AuthController extends Controller
         $request->session()->regenerate();
 
         // role に応じて遷移先を振り分け
-        if (auth()->user()->role === 'admin') {
+        if (Auth::user()->role === 'admin') {
             return redirect()->route('admin.words');
         }
 
