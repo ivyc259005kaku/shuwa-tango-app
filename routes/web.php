@@ -50,7 +50,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/progress/weak-words', [ProgressController::class, 'weakWords'])->name('progress.weak-words');
 
    // 管理者：単語管理画面
+});
 
+// 管理者：単語管理画面
+Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/admin/words', [SignController::class, 'index'])->name('admin.words');
     Route::post('/admin/words', [SignController::class, 'store'])->name('admin.words.store');
     Route::put('/admin/words/{sign}', [SignController::class, 'update'])->name('admin.words.update');

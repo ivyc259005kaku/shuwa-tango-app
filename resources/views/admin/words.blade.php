@@ -21,12 +21,8 @@
 
 {{-- 登録フォーム --}}
 <div class="mb-8">
-    <button type="button" onclick="document.getElementById('create-form').classList.toggle('hidden')"
-            class="px-4 py-1 bg-blue-100 border border-blue-300">
-        単語を登録
-    </button>
-
     <div id="create-form" class="hidden mt-4 p-6 bg-gray-100">
+
         <form method="POST" action="{{ route('admin.words.store') }}" enctype="multipart/form-data">
             @csrf
             <div class="flex gap-6">
