@@ -2,14 +2,14 @@
 
 @section('content')
 <div class="max-w-md mx-auto space-y-6 text-center">
-    <p class="text-sm text-gray-500 text-right">{{ $current }} / {{ $total }} 問</p>
+    <p class="text-sm text-gray-500 dark:text-gray-300 text-right">{{ $current }} / {{ $total }} 問</p>
 
     @if($isCorrect)
         <p class="text-2xl text-blue-600 font-bold py-8">正解！</p>
     @else
         <div class="py-8 space-y-2">
             <p class="text-2xl text-red-500 font-bold">不正解…</p>
-            <p class="text-gray-700">正解: {{ $correctWord }}</p>
+            <p class="text-gray-700 dark:text-gray-200">正解: {{ $correctWord }}</p>
         </div>
     @endif
 

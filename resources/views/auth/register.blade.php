@@ -18,25 +18,25 @@
         <div class="mb-6">
             <input type="text" name="name" value="{{ old('name') }}"
                    placeholder="名前"
-                   class="w-full border border-gray-300 px-4 py-3">
+                   class="w-full border-2 border-gray-300 px-4 py-3">
         </div>
 
         <div class="mb-6">
             <input type="email" name="email" value="{{ old('email') }}"
                    placeholder="メールアドレス"
-                   class="w-full border border-gray-300 px-4 py-3">
+                   class="w-full border-2 border-gray-300 px-4 py-3">
         </div>
 
         <div class="mb-6">
             <input type="password" name="password"
                    placeholder="パスワード"
-                   class="w-full border border-gray-300 px-4 py-3">
+                   class="w-full border-2 border-gray-300 px-4 py-3">
         </div>
 
         <div class="mb-6">
             <input type="password" name="password_confirmation"
                    placeholder="パスワード確認"
-                   class="w-full border border-gray-300 px-4 py-3">
+                   class="w-full border-2 border-gray-300 px-4 py-3">
         </div>
 
         <button type="submit"

@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="max-w-md mx-auto mt-10">
-    <h2 class="text-2xl text-center mb-8">手話単語学習アプリ</h2>
+    <h2 class="text-3xl font-bold text-gray-900 text-center mb-8">手話単語学習アプリ</h2>
 
     @if ($errors->any())
         <div class="mb-4 text-red-600 text-sm">
@@ -18,13 +18,13 @@
         <div class="mb-6">
             <input type="email" name="email" value="{{ old('email') }}"
                    placeholder="メールアドレス"
-                   class="w-full border border-gray-300 px-4 py-3">
+                   class="w-full border-2 border-gray-300 px-4 py-3">
         </div>
 
         <div class="mb-6">
             <input type="password" name="password"
                    placeholder="パスワード"
-                   class="w-full border border-gray-300 px-4 py-3">
+                   class="w-full border-2 border-gray-300 px-4 py-3">
         </div>
 
         <button type="submit"

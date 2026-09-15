@@ -11,7 +11,7 @@
         <a href="{{ route('quiz.start') }}" class="block bg-blue-500 text-white text-center py-4">
             もう一度挑戦する
         </a>
-        <a href="{{ route('home') }}" class="block border border-gray-300 text-center py-4">
+        <a href="{{ route('home') }}" class="block border-2 border-gray-300 text-center py-4">
             ホームへ戻る
         </a>
     </div>

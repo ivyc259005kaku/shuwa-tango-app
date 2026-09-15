@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AccountController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProgressController;
 use App\Http\Controllers\QuizController;
@@ -48,6 +49,11 @@ Route::middleware('auth')->group(function () {
      // 一般ユーザー：学習進捗
     Route::get('/progress', [ProgressController::class, 'index'])->name('progress.index');
     Route::get('/progress/weak-words', [ProgressController::class, 'weakWords'])->name('progress.weak-words');
+
+     // 一般ユーザー：アカウント設定
+    Route::get('/account', [AccountController::class, 'index'])->name('account.index');
+    Route::put('/account/password', [AccountController::class, 'updatePassword'])->name('account.password.update');
+    Route::delete('/account', [AccountController::class, 'destroy'])->name('account.destroy');
 
    // 管理者：単語管理画面
 });
