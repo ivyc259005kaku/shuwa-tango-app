@@ -45,6 +45,21 @@ services:
     networks:
       - shuwa-network
 
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: shuwa-tango-phpmyadmin
+    restart: unless-stopped
+    environment:
+      PMA_HOST: db
+      PMA_USER: root
+      PMA_PASSWORD: root
+    ports:
+      - "8080:80"
+    networks:
+      - shuwa-network
+    depends_on:
+      - db
+
 networks:
   shuwa-network:
     driver: bridge
