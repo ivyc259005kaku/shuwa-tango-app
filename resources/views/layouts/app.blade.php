@@ -36,7 +36,7 @@
             </form>
         </div>
     </header>
-    <div class="pt-24"></div>
+    <div class="pt-16"></div>
     @endauth
 
     <main class="p-8">

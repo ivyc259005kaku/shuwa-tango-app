@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="max-w-md mx-auto space-y-6">
+<div class="max-w-md mx-auto space-y-6 -mt-16">
     <p class="text-sm text-gray-500 dark:text-gray-300 text-right">{{ $current }} / {{ $total }} 問</p>
 
     <div class="text-center bg-gray-50 py-6">
