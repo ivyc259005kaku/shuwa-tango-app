@@ -1,58 +1,62 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 手話単語学習アプリ
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+手話通訳を目指す方向けの、手話単語をクイズ形式で学習できるWebアプリケーションです。
 
-## About Laravel
+## 主な機能
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### 学習機能
+- **4択クイズ**: イラストを見て、対応する手話単語を4択の中から選択します（ランダムに10問出題）
+- **クイズの中断・再開**: 学習途中で中断しても、後から同じ問題の続きから再開できます
+- **学習進捗**: これまでの学習状況を確認できます
+- **苦手単語一覧**: 直近で間違えた単語を一覧表示し、重点的に復習できます
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### アカウント機能
+- 新規登録・ログイン・ログアウト
+- パスワード変更（現在のパスワード確認つき）
+- 退会機能（パスワード再確認のうえアカウントとデータを削除）
+- 一般ユーザー / 管理者の権限管理
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### 管理者機能
+- 単語（イラスト・意味・出典・クイズ選択肢）の登録、編集、削除
+- 管理画面へのアクセスは管理者権限（role = admin）を持つユーザーのみ許可
 
-## Learning Laravel
+### UI / アクセシビリティ
+- ライトモード / ダークモードの切り替え（設定はブラウザに保存）
+- ヘッダーは常にライトカラーで固定し、視認性を確保
+- ボタンや見出しに色分け・太字化・境界線の強調を施し、可読性を向上
+- バリデーションエラーメッセージの日本語化
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 技術構成
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- **フレームワーク**: Laravel
+- **フロントエンド**: Blade + Tailwind CSS（CDN版）
+- **データベース**: MySQL
+- **実行環境**: Docker（WSL2 + Docker Desktop）
+- **DB管理**: phpMyAdmin（`http://localhost:8080`）
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+## テーブル構成（概要）
 
-## Agentic Development
+| テーブル | 内容 |
+|---|---|
+| `users` | ユーザー情報（role で一般/管理者を区別） |
+| `signs` | 手話イラスト（画像パス・出典） |
+| `sign_words` | イラストに対応する単語（意味） |
+| `quiz_options` | クイズの選択肢 |
+| `quiz_results` | クイズの回答結果 |
+| `user_progress` | ユーザーごとの学習進捗 |
+| `quiz_sessions` | 中断中のクイズの状態 |
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+## 開発環境の起動
 
 ```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
+docker compose up -d
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+起動後、以下のURLにアクセスできます。
 
-## Contributing
+- アプリ本体: `http://localhost:8000`
+- phpMyAdmin: `http://localhost:8080`（ユーザー名: root / パスワード: root）
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## ライセンス
 
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+このプロジェクトはLaravelフレームワーク（[MITライセンス](https://opensource.org/licenses/MIT)）を利用しています。
