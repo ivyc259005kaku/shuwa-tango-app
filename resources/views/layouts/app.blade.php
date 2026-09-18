@@ -20,7 +20,7 @@
     <header class="bg-blue-100 flex items-center justify-between px-8 py-6 fixed top-0 left-0 right-0 z-50 transition-colors duration-200 relative">
         <div></div>
 
-        <h1 class="text-2xl md:text-3xl font-bold text-gray-800 md:absolute md:left-1/2 md:-translate-x-1/2 text-center px-2">手話単語学習アプリ</h1>
+        <h1 class="text-base sm:text-xl md:text-3xl font-bold text-gray-800 md:absolute md:left-1/2 md:-translate-x-1/2 text-center px-2 whitespace-nowrap">手話単語学習アプリ</h1>
 
         <div class="flex items-center gap-3">
             <button type="button" onclick="toggleTheme()"
