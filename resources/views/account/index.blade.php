@@ -135,7 +135,7 @@
         </div>
     </div>
 
-    <a href="{{ route('home') }}" class="block bg-blue-100 dark:bg-blue-800 border-2 border-blue-300 dark:border-blue-600 text-center py-4">
+    <a href="{{ route('home') }}" class="block bg-blue-100 dark:bg-blue-800 border-2 border-blue-300 dark:border-blue-600 text-center py-4 text-lg tracking-wider font-semibold">
         ホームへ戻る
     </a>
 </div>

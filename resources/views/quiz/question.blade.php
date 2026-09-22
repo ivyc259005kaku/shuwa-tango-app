@@ -16,7 +16,7 @@
         @csrf
         @foreach($options as $option)
             <button type="submit" name="option_id" value="{{ $option->id }}"
-                class="block w-full border-2 border-gray-300 text-center py-4 hover:bg-blue-50">
+                class="block w-full border-2 border-gray-300 text-center py-4 hover:bg-blue-50 text-lg tracking-wider font-semibold">
                 {{ $option->word }}
             </button>
         @endforeach

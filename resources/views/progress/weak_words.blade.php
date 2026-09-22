@@ -25,10 +25,10 @@
     @endif
 
     <div class="pt-4 space-y-3">
-        <a href="{{ route('progress.index') }}" class="block bg-lime-100 dark:bg-lime-800 border-2 border-lime-300 dark:border-lime-600 text-center py-4">
+        <a href="{{ route('progress.index') }}" class="block bg-lime-100 dark:bg-lime-800 border-2 border-lime-300 dark:border-lime-600 text-center py-4 text-lg tracking-wider font-semibold">
             学習進捗へ戻る
         </a>
-        <a href="{{ route('home') }}" class="block bg-blue-100 dark:bg-blue-800 border-2 border-blue-300 dark:border-blue-600 text-center py-4">
+        <a href="{{ route('home') }}" class="block bg-blue-100 dark:bg-blue-800 border-2 border-blue-300 dark:border-blue-600 text-center py-4 text-lg tracking-wider font-semibold">
             ホームへ戻る
         </a>
     </div>

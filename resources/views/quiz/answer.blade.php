@@ -13,7 +13,7 @@
         </div>
     @endif
 
-    <a href="{{ route('quiz.next') }}" class="block bg-blue-500 text-white text-center py-4">
+    <a href="{{ route('quiz.next') }}" class="block bg-blue-500 text-white text-center py-4 text-lg tracking-wider font-semibold">
         {{ $isLast ? '結果を見る' : '次の問題へ' }}
     </a>
 </div>

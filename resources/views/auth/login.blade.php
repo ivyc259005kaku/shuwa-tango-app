@@ -28,7 +28,7 @@
         </div>
 
         <button type="submit"
-                class="w-full bg-blue-500 hover:bg-blue-600 text-white py-3">
+                class="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 text-lg tracking-wider font-semibold">
             ログイン
         </button>
     </form>
