@@ -57,6 +57,10 @@ docker compose up -d
 - アプリ本体: `http://localhost:8000`
 - phpMyAdmin: `http://localhost:8080`（ユーザー名: root / パスワード: root）
 
+## 発表資料
+
+成果発表で使用した資料は、リポジトリ直下の [手話単語学習アプリ_発表資料.pptx](./手話単語学習アプリ_発表資料.pptx) にあります。
+
 ## ライセンス
 
 このプロジェクトはLaravelフレームワーク（[MITライセンス](https://opensource.org/licenses/MIT)）を利用しています。
