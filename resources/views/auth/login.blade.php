@@ -4,6 +4,10 @@
 <div class="max-w-md mx-auto mt-10">
     <h2 class="text-3xl font-bold text-gray-900 text-center mb-8">手話単語学習アプリ</h2>
 
+    @if (session('status'))
+        <div class="mb-4 text-green-700 text-sm">{{ session('status') }}</div>
+    @endif
+    
     @if ($errors->any())
         <div class="mb-4 text-red-600 text-sm">
             @foreach ($errors->all() as $error)
@@ -46,11 +50,14 @@
         </button>
     </form>
 
-    <div class="text-center mt-8">
-        <a href="{{ route('register') }}" class="text-black underline">新規登録</a>
+    <div class="text-center mt-4">
+        <a href="{{ route('password.request') }}" class="text-sm text-gray-600 underline">パスワードを忘れた方</a>
     </div>
-</div>
 
+        <div class="text-center mt-8">
+            <a href="{{ route('register') }}" class="text-black underline">新規登録</a>
+        </div>
+    
 <script>
 function togglePasswordField(id, btn) {
     const input = document.getElementById(id);
